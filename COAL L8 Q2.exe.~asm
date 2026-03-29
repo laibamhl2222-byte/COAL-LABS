@@ -1,0 +1,18 @@
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov cx, 5         ; loop counter
+mov dl, '*'
+print_star:
+mov ah, 2
+int 21h
+loop print_star   ; repeat 5 times
+
+mov ah, 4ch
+int 21h
+main endp
+end main
+
+
