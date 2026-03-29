@@ -1,0 +1,19 @@
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov dl, '9'       ; start from ASCII '9'
+print_loop:
+mov ah, 2
+int 21h           ; print digit
+dec dl            ; go backwards
+cmp dl, '0'
+jge print_loop    ; keep going until '0'
+
+mov ah, 4ch
+int 21h
+main endp
+end main
+
+
